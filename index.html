@@ -43,7 +43,7 @@
 			so.addChild("讀取作業 2 儲存的座標點在眼睛上繪製出分割線", 1, true);
 			so.addChild("可選擇當下控制哪個虹膜", 1, true);
 			so.addChild("按滑鼠左鍵控制虹膜移動，右鍵停止", 2, true);
-			so.addChild("複製參數至對應目標參數", 2, false);
+			so.addChild("複製參數至對應目標參數", 2, true);
 			so.addChild("可儲存虹膜轉動角度", 1, true);
 
 			//產生自評表，參數如下所示
@@ -225,7 +225,7 @@
 						drawLeftEye();
 						cameraChange("left");
 						isLeftEye = true;
-					}					
+					}
 					leftSelected = !leftSelected;
 					break;
 
@@ -249,10 +249,13 @@
 					leftSelected = !leftSelected;
 					break;
 
-			// 	case 81:    //KeyQ 將左眼的座標複製到右眼
-			// 	    // console.log(modelData);
-			// 		drawRightEye();
-			// 		break;
+				case 51:
+					console.log("now select eye:", eyesSelect);
+					break;
+
+				case 81:    //KeyQ 將左眼的座標複製到右眼
+					eyeDataCopy();
+					break;
 
 				case 83:    //KeyS 儲存線段的座標
 					eyesDataJson.eyesList = eyesDataList;
@@ -308,6 +311,53 @@
 				    console.log("the key not define. by " + event.key);
 					// keyDrawing = 0;
 			}
+		}
+
+		function eyeDataCopy(){
+			switch(eyesSelect){
+				case 1:	//左上右眼
+					eyesData.Left_X_negative_angle = eyesData.Right_X_negative_angle;
+					eyesSelect = 2;
+					break;
+				case 2:	//左上左眼
+					eyesData.Right_X_negative_angle = eyesData.Left_X_negative_angle;
+					eyesSelect = 1;
+					break;
+				case 3:	//右上右眼
+					eyesData.Left_X_positive_angle = eyesData.Right_X_positive_angle;
+					eyesSelect = 4;
+					break;
+				case 4:	//右上左眼
+					eyesData.Right_X_positive_angle = eyesData.Left_X_positive_angle;
+					eyesSelect = 3;
+					break;
+				case 5:	//左下右眼
+					eyesData.Left_Y_positive_angle = -eyesData.Right_Y_negative_angle;
+					eyesSelect = 8;
+					break;
+				case 6:	//左下左眼
+					eyesData.Right_Y_positive_angle = -eyesData.Left_Y_negative_angle;
+					eyesSelect = 7;
+					break;
+				case 7:	//右下右眼
+					eyesData.Left_Y_negative_angle = -eyesData.Right_Y_positive_angle;
+					eyesSelect = 6;
+					break;
+				case 8:	//右下左眼
+					eyesData.Right_Y_negative_angle = -eyesData.Left_Y_positive_angle;
+					eyesSelect = 5;
+					break;
+			}
+			if(eyesSelect % 2 == 0){
+				cameraChange("left");
+				isLeftEye = true;
+			}
+			else{
+				cameraChange("right");
+				isLeftEye = false;
+			}
+			leftSelected = !leftSelected;
+			eyesDataList[modelSelect] = eyesData;
 		}
 
 		function saveEyesData(){
