@@ -1,0 +1,38 @@
+{
+    "eyesList":[
+        {
+        "location":"models/mmd/kizunaai/kizunaai.pmx",
+        "Right_X_negative_angle":8.194552087222853,
+        "Left_X_negative_angle":8.19455208722284,
+        "Right_X_positive_angle":-11.763147351013439,
+        "Left_X_positive_angle":-11.366636766147824,
+        "Right_Y_negative_angle":8.028007494155489,
+        "Left_Y_negative_angle":13.196724647926834,
+        "Right_Y_positive_angle":-12.976779237128055,
+        "Left_Y_positive_angle":-7.698089377957316
+        },
+        {
+        "location":"models/mmd/るいのれ式物述有栖_配布用フォルダ/物述有栖.pmx",
+        "Right_X_negative_angle":14.670891640028001,
+        "Left_X_negative_angle":14.538721445072795,
+        "Right_X_positive_angle":-16.653444564356104,
+        "Left_X_positive_angle":-16.521274369400903,
+        "Right_Y_negative_angle":10.131570767557236,
+        "Left_Y_negative_angle":21.24136216094759,
+        "Right_Y_positive_angle":-21.101616357257154,
+        "Left_Y_positive_angle":-10.131570767557243
+        },
+        {
+        "location":"models/mmd/『天宮こころ(Kokoro Amamiya)』/『天宮こころ(Kokoro Amamiya)』.pmx",
+        "Right_X_negative_angle":18.10731670886338,
+        "Left_X_negative_angle":18.107316708863394,
+        "Right_X_positive_angle":-12.688338715699896,
+        "Left_X_positive_angle":-12.688338715699889,
+        "Right_Y_negative_angle":10.061697865712015,
+        "Left_Y_negative_angle":17.048988050234254,
+        "Right_Y_positive_angle":-16.769496442853367,
+        "Left_Y_positive_angle":-10.061697865712015
+        }
+    ]
+
+}
